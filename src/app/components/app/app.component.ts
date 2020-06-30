@@ -2,25 +2,22 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { User } from '../../models/User';
 import { Post } from '../../models/Post';
+import { Comment } from '../../models/Comment';
 @Component({
   selector: 'app-root',
   template: `<h2>Users</h2>
     <app-user *ngFor="let user of users" [user]="user"></app-user>
-    <hr />
     <h2>Posts</h2>
-    <app-post *ngFor="let post of posts" [post]="post"></app-post>`,
-  styles: [
-    `
-      h2 {
-        color: red;
-      }
-    `,
-  ],
+    <app-post *ngFor="let post of posts" [post]="post"></app-post>
+    <h2>Comments</h2>
+    <app-comment *ngFor="let comment of comments" [comment]="comment">
+    </app-comment>`,
+  styles: [``],
 })
 export class AppComponent {
   users: User[];
   posts: Post[];
-  comments: any[];
+  comments: Comment[];
 
   constructor(private httpClient: HttpClient) {
     this.httpClient
@@ -32,7 +29,7 @@ export class AppComponent {
       .subscribe((data) => (this.posts = data));
 
     this.httpClient
-      .get<any[]>('https://jsonplaceholder.typicode.com/comments')
+      .get<Comment[]>('https://jsonplaceholder.typicode.com/comments')
       .subscribe((data) => (this.comments = data));
   }
 }
