@@ -1,0 +1,14 @@
+div {
+  width: 80%;
+  margin: 5px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  width: 70%;
+}
+
+button {
+  width: 30%;
+}
