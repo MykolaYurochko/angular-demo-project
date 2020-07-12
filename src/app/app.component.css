@@ -1,5 +1,21 @@
-h2 {
+.navigation {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navigation-item {
+  width: 32%;
+  display: block;
+  padding: 5px 0;
+  background: rgb(131, 131, 131);
+  border: 1px solid black;
   text-align: center;
   text-transform: uppercase;
-  color: rgb(21, 82, 82);
+  font-weight: 700;
+}
+.navigation-item a {
+  text-decoration: none;
+  color: black;
 }
