@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 import { IUser } from '../models/User';
 import { IPost } from '../models/Post';
 import { Observable } from 'rxjs';
@@ -10,12 +11,10 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   users(): Observable<IUser[]> {
-    return this.http.get<IUser[]>('https://jsonplaceholder.typicode.com/users');
+    return this.http.get<IUser[]>(`${environment.baseUrl}/users`);
   }
 
   postsOfUser(id): Observable<IPost[]> {
-    return this.http.get<IPost[]>(
-      `https://jsonplaceholder.typicode.com/posts?userId=${id}`
-    );
+    return this.http.get<IPost[]>(`${environment.baseUrl}/posts?userId=${id}`);
   }
 }

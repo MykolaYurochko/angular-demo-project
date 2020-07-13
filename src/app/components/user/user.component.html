@@ -1,4 +1,4 @@
 <div>
   <span>{{user.id}} - {{user.name}} - {{user.username}}</span>
-  <button (click)="showDetails(user.id)">Show Details</button>
+  <a routerLink="{{user.id}}/posts">posts</a>
 </div>

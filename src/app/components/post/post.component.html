@@ -2,7 +2,7 @@
   <h4>{{post.title}}</h4>
   <div>
     ID - {{post.id}}
-    <button (click)="showComments(post.id)">Show Comments</button>
+    <a routerLink="{{post.id}}/comments">comments</a>
   </div>
   <p>{{post.body}}</p>
 </div>
